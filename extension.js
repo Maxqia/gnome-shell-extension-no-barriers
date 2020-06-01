@@ -12,7 +12,7 @@ function enable () {
     global.display.supports_extended_barriers = function () { return false; }
 
     // recompute the layout
-    global.screen.emit('monitors-changed');
+    imports.gi.Meta.MonitorManager.get().emit('monitors-changed');
 }
 
 function disable () {
@@ -21,7 +21,7 @@ function disable () {
     global.display.supports_extended_barriers = supports_extended_barriers;
 
     // recompute the layout
-    global.screen.emit('monitors-changed');
+    imports.gi.Meta.MonitorManager.get().emit('monitors-changed');
 }
 
 // vim: ai et ts=4 sts=4 sw=4
